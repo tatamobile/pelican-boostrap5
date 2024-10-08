@@ -2,45 +2,42 @@
     {% set NAVBAR_ELEMENTS = ['brand-simple', 'menu-items', 'social'] %}
 {% endif %}
 
-<div class="navbar {% if BOOTSTRAP_NAVBAR_INVERSE %}navbar-inverse{% else %}navbar-default{% endif %} navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             {% if 'brand-dropdown' in NAVBAR_ELEMENTS %}
-                <li class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle navbar-brand" href="{{ SITEURL }}/">{{ SITENAME }} {% if SITE_LINKS %}<b class="caret"></b>{% endif %}</a>
-                {% if SITE_LINKS %}
-                <ul class="dropdown-menu">
-                    {% for name, link in SITE_LINKS %}
-                    <li><a href="{{ SITEURL }}/{{ link }}">{{ name }}</a></li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
+                <li class="nav-item dropdown">
+                    <a data-bs-toggle="dropdown" class="navbar-brand dropdown-toggle" href="{{ SITEURL }}/">{{ SITENAME }}</a>
+                    {% if SITE_LINKS %}
+                    <ul class="dropdown-menu">
+                        {% for name, link in SITE_LINKS %}
+                        <li><a a class="dropdown-item" href="{{ SITEURL }}/{{ link }}">{{ name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
                 </li>
             {% endif %}
             {% if 'brand-simple' in NAVBAR_ELEMENTS %}
-                <li><a href="{{ SITEURL }}/{{ link }}">{{ SITENAME }}</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ SITEURL }}/{{ link }}">{{ SITENAME }}</a></li>
             {% endif %}
 
 
             {% if 'menu-items' in NAVBAR_ELEMENTS %}
                 {% for title, link in MENUITEMS %}
                     {% if link is string %}
-                    <li><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ SITEURL }}/{{ link }}">{{ title }}</a>
+                        </li>
                     {% else %}
-                    <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ title }} <b class="caret"></b></a>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">{{ title }}</a>
                         <ul class="dropdown-menu">
                         {% for title, target in link %}
-                        <li><a href="{{ SITEURL }}/{{ target }}">{{ title }}</a></li>
+                        <li><a class="dropdown-item" href="{{ SITEURL }}/{{ target }}">{{ title }}</a></li>
                         {% endfor %}
                         </ul>
                     </li>
@@ -49,15 +46,15 @@
             {% endif %}
             {% if DISPLAY_PAGES_ON_MENU %}
                 {% for p in PAGES %}
-                        <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">
-                            {{ p.title }}
-                        </a></li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ 'active' if p == page else '' }}" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+                        </li>
                     {% endfor %}
             {% endif %}
             {% if DISPLAY_CATEGORIES_ON_MENU %}
                 {% for cat, null in categories %}
-                    <li {% if cat == category %}class="active"{% endif %}>
-                        <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a>
+                    <li class="nav-item">
+                        <a class="nav-link {{ 'active' if cat == category else '' }}" href="{{ SITEURL }}/{{ cat.url }}">{{ cat | capitalize }}</a>
                     </li>
                 {% endfor %}
             {% endif %}
@@ -65,18 +62,18 @@
             </ul>
 
             {% if 'search' in NAVBAR_ELEMENTS and GOOGLE_CSE_ID %}
-                <div class="col-sm-3 col-md-3 pull-right">
-                    <form action="http://google.com/cse" class="navbar-form" role="search" id="cse-search-box">
+                <form class="d-flex" action="http://google.com/cse" class="navbar-form" role="search" id="cse-search-box">
                     <div class="input-group">
                         <input type="hidden" value="{{ GOOGLE_CSE_ID }}" name="cx">
                         <input type="hidden" value="UTF-8" name="ie">
-                        <input type="text" id="srch-term" name="q" placeholder="Search" class="form-control">
-                        <div class="input-group-btn">
-                            <button type="submit" value="search" name="sa" class="btn btn-default"><i class="fa fa-search"></i></button>
-                        </div>
+                        <input type="text" id="srch-term" name="q" placeholder="Search" class="form-control me-2">
+                        <span class="input-group-append">
+                            <button type="submit" value="search" name="sa" class="btn btn-outline-secondary">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
                     </div>
-                    </form>
-                </div>
+                </form>
             {% endif %}
 
             {% if 'social' in NAVBAR_ELEMENTS %}
@@ -93,5 +90,5 @@
         </div>
         <!-- /.navbar-collapse -->
     </div>
-</div> <!-- /.navbar -->
+</nav> <!-- /.navbar -->
 
