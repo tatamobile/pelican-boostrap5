@@ -24,13 +24,13 @@
                 </form>
             </div>
 
-            <ul class="list-group list-inline" id="all-tags">
+            <div class="d-flex flex-wrap justify-content-start" id="all-tags">
                 {%- for tag, articles in tags|sort %}
-                    <li class="list-group-item">
+                    <div class="ps-1 border-1">
                         <span class="label label-default">
                             <a class="with-tooltip" href="{{ SITEURL }}/{{ tag.url }}" data-placement="top" data-toggle="tooltip" data-original-title="{{ articles|count }} article(s)">{{ tag|lower }}</a>
-                    </span>
-                    </li>
+                        </span>
+                    </div>
                 {% endfor %}
             </div>
         </article>
