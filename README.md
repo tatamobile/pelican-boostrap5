@@ -426,5 +426,6 @@ If you want more examples of what you could do with this theme, have a [look her
 ## References
 - [md5](https://www.jsdelivr.com/package/npm/md5)
 - [pygments-css](https://github.com/tatamobile/pygments-css)
+- [generator](https://html-css-js.com/css/generator/font/)
 
 
