@@ -52,6 +52,14 @@ a, a:hover, a:focus {
     color: inherit;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .entry-content a {
     text-decoration: none;
 }
@@ -336,8 +344,12 @@ footer .container a, footer .container a:hover,
 }
 
 .banner-brand {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); */
     max-width: 125px;
+}
+
+#site-banner img{
+    border: 0;
 }
 
 #site-banner-brand span {
@@ -360,6 +372,10 @@ footer .container a, footer .container a:hover,
     margin-right: auto;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.list-group {
+    box-shadow: none !important;
 }
 
 
