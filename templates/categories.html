@@ -14,21 +14,24 @@
 
 {% block content %}
     <section id="categories">
-      <h1>{{ _('All Categories for')  }} {{ SITENAME }}</h1>
-        <div class="panel-group" id="accordion">
+        <h1>{{ _('All Categories for')  }} {{ SITENAME }}</h1>
+        <div class="container">
             {% for category, articles in categories %}
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{category.slug}}">{{ category }} <span class="badge pull-right">{{ articles|count }}</span></a>
-                    </h4>
+            <div class="card mb-1">
+                <!-- Card Header 包含一个触发 collapse 的按钮 -->
+                <div class="card-header bg-secondary m-0 ps-4 pt-2 pb-2 pe-2">
+                    <a class="d-flex align-items-center" data-bs-toggle="collapse" data-bs-target="#collapse{{category.slug}}" aria-expanded="true" aria-controls="collapse{{category.slug}}" href="#collapse-{{category.slug}}">
+                        {{ category }} <span class="badge bg-primary rounded-pill ms-auto">{{ articles|count }}</span>
+                    </a>
                 </div>
-                <div id="collapse-{{category.slug}}" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        {% for article in articles %}
+            
+                <!-- Collapse 折叠内容部分 -->
+                <div id="collapse{{category.slug}}" class="collapse">
+                  <div class="card-body">
+                    {% for article in articles %}
                         <p><span class="categories-timestamp"><time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%Y-%m-%d') }}</time></span> <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></p>
-                        {% endfor %}
-                    </div>
+                    {% endfor %}
+                  </div>
                 </div>
             </div>
             {% endfor %}
