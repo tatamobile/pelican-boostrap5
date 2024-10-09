@@ -21,6 +21,7 @@ body {
 .list-group-item {
     border: none;
     background-color: transparent;
+    padding: 0 0 0.8em 0;
 }
 
 /* Tag cloud */
@@ -125,17 +126,17 @@ img.align-center, .figure.align-center {
     margin-bottom: 1.5em;
 }
 
-.highlighttable pre {
+.highlight pre {
     /* Removes bootstrap default margin-bottom */
-    margin-bottom: 0px;
+    padding: 0.5em;
 }
 
-.highlighttable {
+.highlight {
     /* Adds them margin-bottom to highlightable instead of <pre> */
     margin-bottom: 11px;
 }
 
-.highlighttable {
+.highlight {
     width: 100%;
 }
 
