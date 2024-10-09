@@ -53,16 +53,20 @@
 {% block breadcrumbs %}
     {% if DISPLAY_BREADCRUMBS %}
         {% if DISPLAY_CATEGORY_IN_BREADCRUMBS %}
+        <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
-                <li><a href="{{ SITEURL }}/{{ article.category.url }}" title="{{ article.category }}">{{ article.category }}</a></li>
-                <li class="active"><a href="" title="{{ article.title }}">{{ article.title }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
+                <li class="breadcrumb-item"><a href="{{ SITEURL }}/{{ article.category.url }}" title="{{ article.category }}">{{ article.category }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="" title="{{ article.title }}">{{ article.title }}</a></li>
             </ol>
+        </nav>
         {% else %}
+        <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
-                <li class="active">{{ article.title }}</li>
+                <li class="breadcrumb-item"><a href="{{ SITEURL }}" title="{{ SITENAME }}"><i class="fa fa-home fa-lg"></i></a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ article.title }}</li>
             </ol>
+        </nav>
         {% endif %}
     {% endif %}
 {% endblock %}
