@@ -501,8 +501,7 @@ footer .container a, footer .container a:hover,
     display: flex;
 }
 
-/* medium and up screens */
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
     
     .carousel-inner .carousel-item-end.active,
     .carousel-inner .carousel-item-next {
