@@ -2,21 +2,10 @@
    <div class="container{% if BOOTSTRAP_FLUID %}-fluid{% endif %}">
       <hr>
       <div class="row">
-         {% if articles %}
-           {% if articles[0].modified %}
-             {% set copy_start_date = articles[-1].modified.strftime('%Y') %}
-             {% set copy_end_date = articles[0].modified.strftime('%Y') %}
-           {% else %}
-             {% set copy_start_date = articles[-1].date.strftime('%Y') %}
-             {% set copy_end_date = articles[0].date.strftime('%Y') %}
-           {% endif %}
-         {% else %}
-            {% set copy_start_date = '' %}
-            {% set copy_end_date = '' %}
-         {% endif %}
+         {% set copy_date = NOW|strftime('%Y') %}
          <div class="col-xs-12">
             <p class="text-center">
-              &copy; {{ copy_end_date }} {{ ORGNIZATION }}
+              &copy; {{ copy_date }} {{ ORGNIZATION }}
             </p>
             {% if THEME_FOOTER_LINKS %}
             <p>
