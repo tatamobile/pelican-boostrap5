@@ -1,15 +1,15 @@
 {% if article.related_posts %}
-<section class="well" id="related-posts">
-    <h4>{{ RELATED_POSTS_TEXT|default('Related Posts:') }}</h4>
+<section class="p-3 mb-4 border rounded bg-light" id="related-posts">
+    <h4 class="mb-4">{{ RELATED_POSTS_TEXT|default('Related Posts:') }}</h4>
     {% if RELATED_POSTS_CAROUSEL|default(True) %}
         <div class="carousel slide" id="relatedCarousel">
             <!-- Carousel items -->
             <div class="carousel-inner related">
-            {% for row in article.related_posts|batch(10) %}
-                <div class="item {% if loop.first %}active{% endif %}">
+                {% for row in article.related_posts|batch(5) %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
                     <div class="row">
                     {% for related_article in row %}
-                        <div class="col-md-2 col-xs-2 {% if loop.first %}col-md-offset-1 col-xs-offset-1{% endif %}">
+                        <div class="col-md-2 col-xs-2 {% if loop.first %}offset-md-1 offset-xs-1{% endif %}">
                             <a href="{{ SITEURL }}/{{ related_article.url}}" title="{{ related_article.title|striptags }}" target="_blank">
                                 <img class="img-responsive" alt="{{ related_article.title|striptags }}" src="{{ SITEURL }}/images/cover/{{ related_article.figure }}">
                             </a>
@@ -22,11 +22,17 @@
                     <!--/row-->
                 </div>
                 <!--/item-->
-            {% endfor %}
+                {% endfor %}
             </div>
             <!--/carousel-inner-->
-            <a data-slide="prev" href="#relatedCarousel" class="left carousel-control related"><span class="glyphicon glyphicon-chevron-left"></span></a>
-            <a data-slide="next" href="#relatedCarousel" class="right carousel-control related"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            <button class="carousel-control-prev" type="button" data-bs-target="#relatedCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#relatedCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     {% else %}
         <ul>
