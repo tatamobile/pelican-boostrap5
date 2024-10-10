@@ -22,14 +22,14 @@
 
     {% if SHOW_ARTICLE_AUTHOR %}
         {% if article.author %}
-            <span id="article-author" class="d-sm-block d-md-inline me-2">
+            <span id="article-author" class="d-block d-md-inline me-2">
                 <a href="{{ SITEURL }}/{{ article.author.url }}"><i class="fa fa-user"></i> {{ article.author }}</a>
             </span>
         {% endif %}
     {% endif %}
 
     {% if SHOW_ARTICLE_CATEGORY %}
-        <span id="article-category" class="d-sm-block d-md-inline me-2">
+        <span id="article-category" class="d-block d-md-inline me-2">
             <a href="{{ SITEURL }}/{{ article.category.url }}"><i class="fa fa-folder-open"></i>{{ article.category }}</a>
         </span>
     {% endif %}

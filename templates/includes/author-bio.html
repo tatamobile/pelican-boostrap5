@@ -2,7 +2,7 @@
     <img class="img-fluid ms-3" src="{% if _author.avatar %}{{ SITEURL }}{{ _author.avatar }}{% else %}http://placehold.it/120x120&text={{ author.name }} avatar{% endif %}" alt="{{ author.name }}" style="width: 128px; height: 128px;">
     <div class="card-body">
         <p class="card-title">{{ author.name }}</p>
-        <p class="card-text">{% if _author.bio %}{{ _author.bio }}{% else %}No author bio...{% endif %}</p>
+        <p class="card-text d-none d-md-block">{% if _author.bio %}{{ _author.bio }}{% else %}No author bio...{% endif %}</p>
         {% if _author.links %}
             <p class="card-text author-social">
             {% for title,name,link in _author.links %}

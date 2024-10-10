@@ -8,7 +8,7 @@
 
 
 {% if SITE_BANNER_ELEMENTS %}
-<div id="site-banner" style="background-color: {% if SITE_BANNER_BACKGROUND_COLOR %}{{ SITE_BANNER_BACKGROUND_COLOR }}{% endif %}; {% if SITE_BANNER_BACKGROUND_IMAGE %}background-image: url('{{ SITE_BANNER_BACKGROUND_IMAGE }}'){% endif %}">
+<div class="d-none d-md-block" id="site-banner" style="background-color: {% if SITE_BANNER_BACKGROUND_COLOR %}{{ SITE_BANNER_BACKGROUND_COLOR }}{% endif %}; {% if SITE_BANNER_BACKGROUND_IMAGE %}background-image: url('{{ SITE_BANNER_BACKGROUND_IMAGE }}'){% endif %}">
         <div id="site-banner-brand">
             <div>
                 {% if 'logo' in SITE_BANNER_ELEMENTS %}
