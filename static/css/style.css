@@ -239,14 +239,14 @@ article h1 {
 }
 
 .post-info {
-    padding: 0 0 0 15px;
+    padding: 0 0 0 0;
 }
 
 #article-datetime i, #article-modifiedtime i, #article-author i, #article-comment-count i, #article-category i {
-    margin-right: 5px;
+    margin-right: 2px;
 }
 #article-modifiedtime i, #article-author i, #article-comment-count i, #article-category i {
-    margin-left: 15px;
+    margin-left: 0px;
 }
 
 #article-tags {
@@ -328,7 +328,7 @@ footer .container a, footer .container a:hover,
 }
 
 .figure-summary {
-    margin-right: 20px;
+    margin-right: 0px;
 }
 
 .figure-summary img {
@@ -531,4 +531,10 @@ footer .container a, footer .container a:hover,
 
 .carousel-control-next {
   right: -10px; /* 调整右侧按钮靠近父容器 */
+}
+
+.card.index-header{
+    background-color: rgba(255, 255, 255, 0.0);
+    border: none;
+    box-shadow: none;
 }
