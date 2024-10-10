@@ -20,12 +20,12 @@
 %}
 
 {% if CONTEXT not in HIDE_SIDEBAR_IN %}
-    <div class="col-xs-12 col-md-3 {% if SIDEBAR_POSITION == 'right' %}col-md-push-9{% endif %}" id="sidebar">
+    <div class="col-xs-12 col-md-3 {% if SIDEBAR_POSITION == 'left' %}order-md-first{% endif %}" id="sidebar">
         <aside>
             {% if 'brand' in SIDEBAR_ELEMENTS %}
                 {% include 'sidebar/brand.html' %}
             {% endif %}
-            <section class="visible-lg visible-md" id="sidebar-content{% if SIDEBAR_POSITION == 'left' %}-left{% endif %}">
+            <section class="d-none d-md-block" id="sidebar-content{% if SIDEBAR_POSITION == 'left' %}-left{% endif %}">
                 <ul class="list-group list-group-flush">
                     {% for element in SIDEBAR_ELEMENTS %}
                         {% if element != 'brand' %}
