@@ -334,12 +334,12 @@ footer .container a, footer .container a:hover,
 }
 
 .figure-summary {
-    margin-right: 0px;
+    margin-right: 1rem;
 }
 
 .figure-summary img {
     width: 150px;
-    height: auto;
+    height: 150px;
     max-width: 150px;
 }
 

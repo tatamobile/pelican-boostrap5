@@ -3,16 +3,16 @@
     {% if articles %}
         {% for article in (articles_page.object_list if articles_page else articles) %}
             <article>
-                <header class="card d-flex flex-row align-items-center index-header">
-                    <div class="figure figure-summary">
+                <header class="index-header clearfix">
+                    <div class="figure figure-summary float-start">
                         {% if article.figure %}
-                            <a href="{{ SITEURL }}/{{ article.url }}" class="reference external image-reference"><img class="card-img-left" src="{{ SITEURL }}/images/cover/{{ article.figure }}"></a>
+                            <a href="{{ SITEURL }}/{{ article.url }}" class="reference external image-reference"><img src="{{ SITEURL }}/images/cover/{{ article.figure }}"></a>
                         {% else %}
-                            <a href="{{ SITEURL }}/{{ article.url }}" class="reference external image-reference"><img class="card-img-left" src="{{ SITEURL }}/images/logo.png"></a>
+                            <a href="{{ SITEURL }}/{{ article.url }}" class="reference external image-reference"><img src="{{ SITEURL }}/images/logo.png"></a>
                         {% endif %}
                     </div>
-                    <div class="card-body header-title-meta">
-                        <h5 class="card-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title|striptags }}</a></h5>
+                    <div class="header-title-meta">
+                        <h5><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title|striptags }}</a></h5>
                         {% include 'includes/article_info.html' %}
                     </div>
                 </header>
