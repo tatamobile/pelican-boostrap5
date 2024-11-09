@@ -322,9 +322,18 @@ footer .container a, footer .container a:hover,
     padding-right: 0px;
 }
 
+table{
+    border: 1px solid #666;
+    padding: 5px;
+}
+
+table td, table th{
+    border: 1px solid #666;
+    padding: 5px;
+}
+
 .table.docutils {
     border: 0px;
-
 }
 
 .table.docutils thead tr th, .table.docutils tbody tr td {
