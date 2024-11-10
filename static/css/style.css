@@ -322,7 +322,7 @@ footer .container a, footer .container a:hover,
     padding-right: 0px;
 }
 
-table{
+/* table{
     border: 1px solid #666;
     padding: 5px;
 }
@@ -330,7 +330,7 @@ table{
 table td, table th{
     border: 1px solid #666;
     padding: 5px;
-}
+} */
 
 .table.docutils {
     border: 0px;
