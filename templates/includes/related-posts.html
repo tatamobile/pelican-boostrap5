@@ -1,5 +1,5 @@
 {% if article.related_posts %}
-<section class="p-3 mb-4 border rounded bg-light d-none d-md-block" id="related-posts">
+<section class="p-3 mb-4 border rounded bg-light" id="related-posts">
     <h4 class="mb-4">{{ RELATED_POSTS_TEXT|default('Related Posts:') }}</h4>
     {% if RELATED_POSTS_CAROUSEL|default(True) %}
         <div class="carousel slide" id="relatedCarousel">
